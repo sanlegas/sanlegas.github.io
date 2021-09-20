@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/mycss.css">
+    <script src="https://connect.facebook.net/en_US/fbinstant.6.0.js"></script>
+
+    <script src="js/phaser.min.js"></script>
+    <script src="js/gyro.min.js"></script>
+
+    <script src="js/funciones.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/inicio.js"></script>
+    <script src="js/puntaje.js"></script>
+    <script src="js/juego.js"></script>
+    <script src="js/acerca.js"></script>
+    <script src="js/terminado.js"></script>
+
+
+    <style type="text/css">
+        body {
+           margin: 0;
+           padding: 0;
+        }
+    </style>
+</head>
+<body bgcolor="#58ACFA">
+<div class="fontLoader" style="font-family: Orange;">
+    -
+</div>
+
+<script type="text/javascript">
+var game;
+
+var height = 800;
+var width = 560;
+
+game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
+
+game.state.add('Loader', Bola.Loader);
+game.state.add('Inicio', Bola.Inicio);
+game.state.add('Terminado', Bola.Terminado);
+game.state.add('Juego', Bola.Juego);
+game.state.add('Puntaje', Bola.Puntaje);
+game.state.add('Acerca', Bola.Acerca);
+game.state.start('Loader');
+
+</script>
+
+</body>
+</html>

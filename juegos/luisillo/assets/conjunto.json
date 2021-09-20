@@ -1,0 +1,12 @@
+{ "columns":3,
+ "image":"map.png",
+ "imageheight":64,
+ "imagewidth":192,
+ "margin":0,
+ "name":"conjunto",
+ "spacing":0,
+ "tilecount":3,
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset"
+}

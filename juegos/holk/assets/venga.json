@@ -1,0 +1,30 @@
+{"frames": [
+
+{
+	"filename": "luisillo.png",
+	"frame": {"x":1,"y":1,"w":416,"h":849},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":321,"y":0,"w":416,"h":849},
+	"sourceSize": {"w":1024,"h":1024},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "luisillo2.png",
+	"frame": {"x":1,"y":852,"w":416,"h":849},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":321,"y":0,"w":416,"h":849},
+	"sourceSize": {"w":1024,"h":1024},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "vientos.png",
+	"format": "RGBA8888",
+	"size": {"w":418,"h":1702},
+	"scale": "0.5",
+	"smartupdate": "$TexturePacker:SmartUpdate:4cc9ac1c4dbd7a2ee54023f3b23c962b:3094f2366055d09bd290bbb4df852e38:30c68c82933d143c51d38f6aaca6ac59$"
+}
+}

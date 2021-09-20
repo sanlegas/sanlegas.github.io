@@ -1,0 +1,175 @@
+$backGroundColor: #455A64;
+$backgroundTerminalColor: #263238;
+
+
+$borderColor: #37474F;
+$fontColor: #1DE9B6;
+
+@mixin animation() {
+  -webkit-animation: 600ms blink step-end infinite;
+  -moz-animation: 600ms blink step-end infinite;
+  -ms-animation: 600ms blink step-end infinite;
+  -o-animation: 600ms blink step-end infinite;
+  animation: 600ms blink step-end infinite;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@include keyframes(blink) {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: $fontColor;
+  }
+}
+
+#command::after{
+
+  content:'|';
+  font-weight: 100;
+  font-size: 2.2rem;
+  @include animation()
+}
+
+
+#command{
+  border:none;
+  background-color:$backgroundTerminalColor;
+  text-align:left;
+  font-size:2rem;
+  color:$fontColor;
+  margin-left:.1rem;
+}
+
+
+body{
+  margin: 5rem;
+}
+
+.nombre {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  h1{
+    font-size: 3.5rem;
+
+    white-space: normal;
+  }
+}
+
+#nav{
+  a{
+    text-decoration: none;
+    pre{
+      font-size: 2rem;
+      white-space: normal;
+      color: $fontColor;
+    }
+
+  }
+
+  ul{
+    list-style: none;
+    display: grid;
+    gap:3rem;
+    grid-template-columns: 100%;
+    align-items:center;
+    justify-content: center;
+    justify-items: center;
+  }
+}
+
+
+.position{
+
+  h2{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+}
+
+body{
+  background-color: $backGroundColor;
+}
+
+*{
+  padding:0px;
+  margin:0px;
+}
+
+#terminal{
+  text-align: center;
+  border: solid .8rem $borderColor;
+  border-radius: 1rem;
+  background-color:$backgroundTerminalColor;
+  color: $fontColor;
+  height: auto;
+
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr .1fr ;
+}
+
+.lineTerminal{
+  text-align: left;
+  color: $fontColor;
+  font-size:2em;
+}
+
+.divTerminal{
+  display: inline;
+  text-align:left;
+  margin-left: 0.5rem;
+}
+
+
+.rowOptionsFirst{
+  display: grid;
+  width:100%;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.rowOptionsSecond{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 70%;
+
+}
+
+@media (max-width:1046px){
+
+  .nombre h1{
+    font-size:3rem;
+  }
+
+  .position h2{
+    font-size: 2rem;
+  }
+
+  #terminal{
+    grid-template-rows: 1fr .1fr .1fr ;
+
+  }
+}

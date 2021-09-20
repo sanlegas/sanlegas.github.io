@@ -1,0 +1,44 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+    <title></title>
+    
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script src="js/phaser.js"></script>
+    <script src="js/inicio.js"></script>
+    <script src="js/juego.js"></script>
+    <script src="js/terminado.js"></script>
+
+    <style type="text/css">
+        body {
+           margin: 0;
+           padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+(function() {
+	//var height = (window.innerHeight > window.innerWidth)?window.innerHeight:window.innerWidth;
+	//var width = (window.innerHeight > window.innerWidth)?window.innerWidth:window.innerHeight;
+
+    var height = window.innerWidth;
+    var width = window.innerHeight;
+
+    var game = new Phaser.Game(height, width, Phaser.AUTO, 'game');
+
+    game.state.add('Inicio', Holk.Inicio);
+    game.state.add('Juego', Holk.Juego);
+    game.state.add('Terminado', Holk.Terminado);
+
+    game.state.start('Inicio');
+})();
+
+</script>
+
+</body>
+</html>

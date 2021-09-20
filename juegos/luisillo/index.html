@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/phaser.min.js"></script>
+		<script src="js/phaser-virtual-joystick.min.js" type="text/javascript"></script>
+		<script src="js/estados/loader.js"></script>
+		<script src="js/estados/inicioPillo.js"></script>
+
+    <style type="text/css">
+        body {
+					margin: 0;
+					padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+	var tamanioWorld = 900;
+
+	var game = new Phaser.Game(tamanioWorld,(tamanioWorld /4) * 3 , Phaser.AUTO);
+	game.state.add('Inicio', Puzzle.Inicio);
+	game.state.add('Loader', Puzzle.Loader);
+
+	game.state.start('Loader');
+
+
+</script>
+
+</body>
+</html>

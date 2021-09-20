@@ -1,0 +1,28 @@
+{"frames": {
+
+"marck1.png":
+{
+	"frame": {"x":0,"y":0,"w":224,"h":315},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":315},
+	"sourceSize": {"w":224,"h":315}
+},
+"marck3.png":
+{
+	"frame": {"x":224,"y":0,"w":224,"h":315},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":315},
+	"sourceSize": {"w":224,"h":315}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "marck.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":315},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f8626a2dadb891dea22c11797910c852:7ccf5f98c40c3a6e73e2b9c7713eefb5:91441b3ee61862dda5e9a4f7fab9c71f$"
+}
+}

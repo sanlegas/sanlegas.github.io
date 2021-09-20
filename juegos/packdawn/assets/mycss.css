@@ -1,0 +1,7 @@
+@font-face {	font-family: 'Orange';	src: url('font.ttf') format('truetype');}
+
+.fontLoader {
+   position: absolute;
+   left: -1000px;
+   visibility: hidden;
+}
