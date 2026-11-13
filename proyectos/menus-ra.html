@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QR Menú con realidad aumentada | Isaac Santiago</title>
+    <meta
+      name="description"
+      content="Plataforma de menús digitales para restaurantes: QR que no se reimprime, pedidos por WhatsApp y platillos en 3D y realidad aumentada generados a partir de fotos."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="QR Menú con realidad aumentada | Isaac Santiago" />
+    <meta
+      property="og:description"
+      content="Menú digital para restaurantes con pedidos por WhatsApp y platillos en realidad aumentada."
+    />
+    <meta
+      property="og:image"
+      content="https://sanlegas.github.io/assets/img/proyectos/qrmenu-landing.webp"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232046d0'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EIS%3C/text%3E%3C/svg%3E"
+    />
+    <script src="../js/lang-boot.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+        } catch (e) {}
+        root.classList.add("js");
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Isaac Santiago, inicio">
+          <span class="brand-mark" aria-hidden="true">IS</span>
+          <span>Isaac Santiago</span>
+        </a>
+        <nav class="nav" id="menu" aria-label="Principal">
+          <a href="../index.html#soluciones">Qué resuelvo</a>
+          <a href="../index.html#proyectos" aria-current="true">Proyectos</a>
+          <a href="../index.html#ia">IA</a>
+          <a href="../index.html#experiencia">Experiencia</a>
+          <a href="../index.html#contacto">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-btn lang-btn"
+            type="button"
+            data-lang-toggle
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            <i class="ph ph-moon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon-btn menu-btn"
+            type="button"
+            data-menu-toggle
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <i class="ph ph-list" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ============ ENCABEZADO ============ -->
+      <section class="p-hero">
+        <div class="container">
+          <a class="crumb" href="../index.html#proyectos">
+            <i class="ph ph-arrow-left" aria-hidden="true"></i>
+            Proyectos
+          </a>
+
+          <div class="p-hero-grid">
+            <div class="hero-copy">
+              <p class="status">En desarrollo</p>
+              <h1>QR Menú</h1>
+              <p class="lead">
+                Menú digital para restaurantes: el comensal escanea, pide por WhatsApp y ve el
+                platillo en 3D sobre su mesa.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary"
+                  href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20de%20QR%20Men%C3%BA."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+                  Quiero probarlo
+                </a>
+                <a class="btn btn-ghost" href="#demo-3d">Ver platillo en 3D</a>
+              </div>
+            </div>
+
+            <div class="phones">
+              <img
+                src="../assets/img/proyectos/qrmenu-menu.webp"
+                alt="Menú público de una cafetería de demostración con categorías, precios y botón Agregar"
+                width="390"
+                height="844"
+                fetchpriority="high"
+              />
+              <img
+                src="../assets/img/proyectos/qrmenu-platillo.webp"
+                alt="Ficha de un capuchino con fotografía y pestañas Foto y 3D y realidad aumentada"
+                width="390"
+                height="844"
+              />
+              <img
+                src="../assets/img/proyectos/qrmenu-pedido.webp"
+                alt="Carrito con tres bebidas, total y botón Enviar pedido por WhatsApp"
+                width="390"
+                height="844"
+              />
+            </div>
+          </div>
+
+          <dl class="p-meta">
+            <div>
+              <dt>Tipo</dt>
+              <dd>SaaS para restaurantes</dd>
+            </div>
+            <div>
+              <dt>Rol</dt>
+              <dd>Producto, arquitectura y desarrollo</dd>
+            </div>
+            <div>
+              <dt>Estado</dt>
+              <dd>MVP navegable, sin producción aún</dd>
+            </div>
+            <div>
+              <dt>Acceso</dt>
+              <dd>Privado, demo bajo solicitud</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ PROBLEMA Y SOLUCIÓN ============ -->
+      <section class="section section-tint">
+        <div class="container p-split">
+          <div class="p-problem" data-reveal>
+            <h2>El problema</h2>
+            <p>
+              El menú impreso no muestra el platillo, hay que reimprimirlo con cada cambio de
+              precio y no dice qué consulta más la gente.
+            </p>
+          </div>
+          <div class="p-solution" data-reveal>
+            <h2>La solución</h2>
+            <p>
+              Un QR que nunca se reimprime lleva a un menú editable, con pedidos por WhatsApp,
+              estadísticas y platillos en realidad aumentada creados a partir de fotos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DEMO 3D ============ -->
+      <section class="section" id="demo-3d">
+        <div class="container viewer-grid">
+          <div data-reveal>
+            <h2>Un platillo del demo, en 3D</h2>
+            <p>
+              Este es el mismo modelo que ve el comensal en el menú de demostración. Cárgalo y
+              gíralo; desde un celular puedes ponerlo sobre tu mesa.
+            </p>
+            <ul class="checks">
+              <li>
+                <i class="ph ph-check" aria-hidden="true"></i>
+                Sin instalar ninguna aplicación
+              </li>
+              <li>
+                <i class="ph ph-check" aria-hidden="true"></i>
+                A escala real, usando la altura del platillo
+              </li>
+              <li>
+                <i class="ph ph-check" aria-hidden="true"></i>
+                Funciona en iOS y Android
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="viewer"
+            data-viewer
+            data-src="../assets/models/capuchino.glb"
+            data-ios-src="../assets/models/capuchino.usdz"
+            data-alt="Modelo 3D de una taza de capuchino con canela"
+            data-reveal
+          >
+            <div class="viewer-stage">
+              <img
+                src="../assets/img/proyectos/qrmenu-capuchino.webp"
+                alt="Fotografía de un capuchino con canela en taza amarilla"
+                width="960"
+                height="720"
+                loading="lazy"
+              />
+            </div>
+            <div class="viewer-bar">
+              <button class="btn btn-primary" type="button" data-viewer-load>
+                <i class="ph ph-cube-focus" aria-hidden="true"></i>
+                Cargar modelo 3D
+              </button>
+              <p class="viewer-note" role="status" data-no-i18n>Descarga de 7 MB al cargar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CÓMO FUNCIONA ============ -->
+      <section class="section section-tint" id="como-funciona">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Cómo funciona</h2>
+            <p>Tres pasos del lado del restaurante, dos del lado del comensal.</p>
+          </div>
+
+          <ol class="how" style="--cols: 5">
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-notepad" aria-hidden="true"></i></span>
+              <h3>Carga su menú</h3>
+              <p>
+                Categorías, platillos, fotos y precios desde su panel. En el plan básico lo
+                captura el administrador.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-qr-code" aria-hidden="true"></i></span>
+              <h3>Genera sus QR</h3>
+              <p>
+                Uno por negocio o por mesa, en PNG o SVG, listos para imprimir una sola vez.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-camera" aria-hidden="true"></i></span>
+              <h3>Sube fotos del platillo</h3>
+              <p>
+                Con su altura real en centímetros. Un worker genera el modelo 3D y una persona
+                lo revisa antes de publicarlo.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-device-mobile" aria-hidden="true"></i></span>
+              <h3>El comensal escanea</h3>
+              <p>
+                Sin cuenta ni aplicación: navega categorías, abre el platillo y alterna entre
+                foto y 3D.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-cube-focus" aria-hidden="true"></i></span>
+              <h3>Pide y lo ve en su mesa</h3>
+              <p>
+                Arma su pedido y lo envía por WhatsApp. En AR, el platillo aparece frente a él
+                a tamaño real.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ FUNCIONES ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Qué hace</h2>
+          </div>
+
+          <div class="features">
+            <article class="feature feature-lead" data-reveal>
+              <span class="flow-icon"><i class="ph ph-cube-focus" aria-hidden="true"></i></span>
+              <div>
+                <h3>Realidad aumentada desde el navegador</h3>
+                <p>
+                  Un lanzador propio detecta el dispositivo: AR Quick Look con USDZ en iOS y
+                  Scene Viewer con GLB en Android. Si el teléfono no soporta AR, el pedido en
+                  curso se conserva.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-images" aria-hidden="true"></i></span>
+              <div>
+                <h3>De fotos a modelo 3D</h3>
+                <p>
+                  Recorte del fondo, generación con el motor elegido (IA generativa en nube,
+                  modelo local o fotogrametría) y acabado automático en Blender.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></span>
+              <div>
+                <h3>Pedidos por WhatsApp</h3>
+                <p>
+                  Carrito para comer en el local, para llevar o a domicilio, que abre WhatsApp
+                  con el pedido ya redactado.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-storefront" aria-hidden="true"></i></span>
+              <div>
+                <h3>Panel del restaurante</h3>
+                <p>
+                  Editor de menú según plan, descarga de QR, estadísticas de escaneos y vistas, y
+                  solicitudes de cambio.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-gauge" aria-hidden="true"></i></span>
+              <div>
+                <h3>Panel de administración</h3>
+                <p>
+                  Prospectos, clientes, pagos, ingreso recurrente y cola de trabajos 3D para
+                  aprobar, rechazar o reintentar con otro motor.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-chart-bar" aria-hidden="true"></i></span>
+              <div>
+                <h3>Analítica de uso</h3>
+                <p>
+                  Cinco tipos de evento: escaneo, vista de menú, vista de platillo, apertura de
+                  AR y pedido por WhatsApp.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-stairs" aria-hidden="true"></i></span>
+              <div>
+                <h3>Planes y ciclo de cobro</h3>
+                <p>
+                  Tres planes con funciones controladas desde un solo punto del código, y ciclo
+                  de cuenta activa, gracia, solo lectura y suspendida.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CAPTURA ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="shots">
+            <figure class="shot shot-wide" data-reveal>
+              <img
+                src="../assets/img/proyectos/qrmenu-landing.webp"
+                alt="Página de inicio de QR Menú con el titular Tus clientes escanean, ven tu menú y piden, hasta en realidad aumentada, y enlaces a tres menús de demostración"
+                width="1440"
+                height="690"
+                loading="lazy"
+              />
+              <figcaption>Página de inicio del producto, con acceso a los menús de demostración.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ARQUITECTURA ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Arquitectura</h2>
+            <p>
+              La web atiende a restaurantes y comensales. La generación 3D corre aparte y se
+              comunica solo por HTTP.
+            </p>
+          </div>
+
+          <div class="arch" data-reveal>
+            <article class="arch-node">
+              <i class="ph ph-browser" aria-hidden="true"></i>
+              <h3>Web y acciones</h3>
+              <p>
+                Next.js 15 con App Router, React 19, Server Components y Server Actions.
+                Tailwind 4.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-database" aria-hidden="true"></i>
+              <h3>Datos y archivos</h3>
+              <p>
+                Prisma con 11 modelos sobre SQLite, con PostgreSQL en la ruta. Imágenes
+                convertidas a WebP.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-cpu" aria-hidden="true"></i>
+              <h3>Worker 3D</h3>
+              <p>
+                Proceso en una Mac que toma trabajos de la cola, genera GLB y USDZ y reporta
+                costo y tiempo.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-cube-focus" aria-hidden="true"></i>
+              <h3>Visor y AR</h3>
+              <p>
+                model-viewer cargado solo al abrir la pestaña 3D, más AR Quick Look y Scene
+                Viewer.
+              </p>
+            </article>
+          </div>
+
+          <dl class="tech" data-reveal>
+            <div>
+              <dt>Web</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Next.js 15</li>
+                  <li>React 19</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind 4</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Datos</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Prisma</li>
+                  <li>SQLite</li>
+                  <li>sharp</li>
+                  <li>qrcode</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Generación 3D</dt>
+              <dd>
+                <ul class="tags">
+                  <li>IA generativa en proveedor cloud</li>
+                  <li>Modelo local</li>
+                  <li>Fotogrametría</li>
+                  <li>Blender</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Realidad aumentada</dt>
+              <dd>
+                <ul class="tags">
+                  <li>model-viewer</li>
+                  <li>AR Quick Look</li>
+                  <li>Scene Viewer</li>
+                  <li>GLB</li>
+                  <li>USDZ</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ DECISIONES ============ -->
+      <section class="section section-tint">
+        <div class="container decisions-grid">
+          <div data-reveal>
+            <h2>Decisiones de ingeniería</h2>
+            <p>Pensadas para que el restaurante no tenga que entender nada de esto.</p>
+          </div>
+
+          <ul class="decisions">
+            <li data-reveal>
+              <h3>El QR no cambia nunca</h3>
+              <p>
+                Codifica un enlace corto propio que registra el escaneo y redirige. El
+                restaurante cambia de plan o de menú sin reimprimir.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>El worker es reemplazable</h3>
+              <p>
+                Se comunica por HTTP con un token. Si está apagado, la web sigue funcionando y
+                los trabajos esperan en la cola.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Dos procesos no toman el mismo trabajo</h3>
+              <p>
+                Bloqueo optimista al reclamar trabajos, y los que llevan más de dos horas
+                procesando se vuelven a repartir.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Una persona revisa cada modelo</h3>
+              <p>
+                Ningún modelo llega al menú sin aprobación, y puede reintentarse con otro motor
+                si el resultado no convence.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Sesiones propias</h3>
+              <p>
+                Cookie httpOnly, solo el hash del token en base de datos, contraseñas con scrypt
+                y límite de intentos de acceso.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ ESTADO ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Dónde va</h2>
+            <p>El recorrido completo ya funciona en local. Falta llevarlo a producción.</p>
+          </div>
+
+          <div class="roadmap">
+            <div data-reveal>
+              <h3>Hecho</h3>
+              <ul>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Menú público con carrito y pedido por WhatsApp</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Visor 3D y lanzador de realidad aumentada</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Paneles de restaurante y de administración</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Cola de generación 3D con revisión</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Estadísticas de escaneos y vistas</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Página de inicio con captura de prospectos</li>
+              </ul>
+            </div>
+            <div data-reveal>
+              <h3>Siguiente</h3>
+              <ul>
+                <li><i class="ph ph-arrow-right" aria-hidden="true"></i>PostgreSQL y almacenamiento en la nube</li>
+                <li><i class="ph ph-arrow-right" aria-hidden="true"></i>Cobro en línea con Stripe o Mercado Pago</li>
+                <li><i class="ph ph-arrow-right" aria-hidden="true"></i>Correos transaccionales</li>
+                <li><i class="ph ph-arrow-right" aria-hidden="true"></i>Menús en varios idiomas y alérgenos</li>
+                <li><i class="ph ph-arrow-right" aria-hidden="true"></i>Rol de personal y captura en sitio</li>
+                <li><i class="ph ph-arrow-right" aria-hidden="true"></i>Despliegue en producción</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ LLAMADO ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <div>
+              <h2>¿Quieres verlo funcionando?</h2>
+              <p>Es un proyecto privado. Escríbeme y agendamos una demostración.</p>
+            </div>
+            <a
+              class="btn btn-invert"
+              href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20de%20QR%20Men%C3%BA."
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+              Quiero probarlo
+            </a>
+          </div>
+
+          <nav class="p-next" aria-label="Otros proyectos">
+            <a href="publicador.html"
+              >Publicador con IA <i class="ph ph-arrow-right" aria-hidden="true"></i
+            ></a>
+            <a href="mosaicos.html">TeselARte <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            <a href="english4u.html"
+              >English For You <i class="ph ph-arrow-right" aria-hidden="true"></i
+            ></a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Isaac Santiago</p>
+        <a href="../index.html">Volver al inicio</a>
+      </div>
+    </footer>
+
+    <script src="../js/i18n.en.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/viewer.js" defer></script>
+  </body>
+</html>

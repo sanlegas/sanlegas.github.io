@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>English For You | Isaac Santiago</title>
+    <meta
+      name="description"
+      content="Plataforma para aprender inglés leyendo sobre lo que te interesa: la IA genera artículo, audio, vocabulario, quiz y corrige tus respuestas habladas."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="English For You | Isaac Santiago" />
+    <meta
+      property="og:description"
+      content="Lecciones de inglés generadas con IA a tu nivel, con práctica oral, repaso espaciado y salas en grupo."
+    />
+    <meta
+      property="og:image"
+      content="https://sanlegas.github.io/assets/img/proyectos/english-inicio.webp"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232046d0'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EIS%3C/text%3E%3C/svg%3E"
+    />
+    <script src="../js/lang-boot.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+        } catch (e) {}
+        root.classList.add("js");
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Isaac Santiago, inicio">
+          <span class="brand-mark" aria-hidden="true">IS</span>
+          <span>Isaac Santiago</span>
+        </a>
+        <nav class="nav" id="menu" aria-label="Principal">
+          <a href="../index.html#soluciones">Qué resuelvo</a>
+          <a href="../index.html#proyectos" aria-current="true">Proyectos</a>
+          <a href="../index.html#ia">IA</a>
+          <a href="../index.html#experiencia">Experiencia</a>
+          <a href="../index.html#contacto">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-btn lang-btn"
+            type="button"
+            data-lang-toggle
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            <i class="ph ph-moon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon-btn menu-btn"
+            type="button"
+            data-menu-toggle
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <i class="ph ph-list" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ============ ENCABEZADO ============ -->
+      <section class="p-hero">
+        <div class="container">
+          <a class="crumb" href="../index.html#proyectos">
+            <i class="ph ph-arrow-left" aria-hidden="true"></i>
+            Proyectos
+          </a>
+
+          <div class="p-hero-grid">
+            <div class="hero-copy">
+              <p class="status">MVP funcional</p>
+              <h1>English For You</h1>
+              <p class="lead">
+                Escribe un tema y la IA genera un artículo a tu nivel con audio, vocabulario, quiz
+                y práctica oral.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary"
+                  href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20de%20English%20For%20You."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+                  Quiero probarlo
+                </a>
+                <a class="btn btn-ghost" href="#como-funciona">Cómo funciona</a>
+              </div>
+            </div>
+
+            <figure class="p-visual">
+              <img
+                src="../assets/img/proyectos/english-inicio.webp"
+                alt="Pantalla de inicio de English For You: campo para escribir un tema, ideas sugeridas, selector de nivel de A1 a C2 y botón Generar y practicar"
+                width="1440"
+                height="900"
+                fetchpriority="high"
+              />
+            </figure>
+          </div>
+
+          <dl class="p-meta">
+            <div>
+              <dt>Tipo</dt>
+              <dd>Plataforma educativa web</dd>
+            </div>
+            <div>
+              <dt>Rol</dt>
+              <dd>Producto, frontend y backend</dd>
+            </div>
+            <div>
+              <dt>Calidad</dt>
+              <dd>275 casos de prueba en frontend</dd>
+            </div>
+            <div>
+              <dt>Acceso</dt>
+              <dd>Privado, demo bajo solicitud</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ PROBLEMA Y SOLUCIÓN ============ -->
+      <section class="section section-tint">
+        <div class="container p-split">
+          <div class="p-problem" data-reveal>
+            <h2>El problema</h2>
+            <p>
+              Los cursos de inglés usan textos genéricos que no le importan a quien estudia, y
+              casi nunca hay con quién practicar ni quién corrija al hablar.
+            </p>
+          </div>
+          <div class="p-solution" data-reveal>
+            <h2>La solución</h2>
+            <p>
+              Cada persona elige su tema y su nivel. La plataforma genera la lección completa,
+              corrige las respuestas habladas y permite practicar en grupo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CÓMO FUNCIONA ============ -->
+      <section class="section" id="como-funciona">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Cómo funciona</h2>
+            <p>De una idea a una lección completa, con práctica y seguimiento.</p>
+          </div>
+
+          <ol class="how" style="--cols: 5">
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-sliders-horizontal" aria-hidden="true"></i></span>
+              <h3>Elige nivel y tema</h3>
+              <p>
+                Nivel de A1 a C2 con descriptores claros. El tema puede escribirse en español o
+                en inglés.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-sparkle" aria-hidden="true"></i></span>
+              <h3>La IA arma la lección</h3>
+              <p>
+                Artículo con el vocabulario y la gramática del nivel, narración, preguntas y
+                quiz. Se ve avanzar en vivo.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-headphones" aria-hidden="true"></i></span>
+              <h3>Lee y escucha</h3>
+              <p>
+                El audio resalta la frase que suena. Tocar una palabra muestra su significado en
+                esa frase.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-microphone" aria-hidden="true"></i></span>
+              <h3>Responde en voz alta</h3>
+              <p>
+                Graba tu respuesta y recibe la versión corregida, los errores explicados en
+                español y una calificación.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-chart-line-up" aria-hidden="true"></i></span>
+              <h3>Repasa y mide</h3>
+              <p>
+                Tarjetas con repetición espaciada y panel de progreso con racha, temas leídos y
+                promedio de quiz.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ CAPTURAS ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>El producto</h2>
+          </div>
+
+          <div class="shots">
+            <figure class="shot shot-wide" data-reveal>
+              <img
+                src="../assets/img/proyectos/english-tema.webp"
+                alt="Vista de un tema de nivel B1 sobre comida callejera, con el artículo a la izquierda y pestañas de conversación, vocabulario y quiz a la derecha"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+              <figcaption>
+                Un tema generado: artículo, preguntas para conversar con respuesta hablada,
+                vocabulario y quiz.
+              </figcaption>
+            </figure>
+            <figure class="shot shot-wide" data-reveal>
+              <img
+                src="../assets/img/proyectos/english-ipa.webp"
+                alt="Tabla de sonidos del inglés con vocales y diptongos, cada uno con su símbolo fonético y una palabra de ejemplo"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+              <figcaption>
+                Tabla de los 44 sonidos del inglés, con desglose de cualquier palabra por sílaba.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FUNCIONES ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Qué hace</h2>
+          </div>
+
+          <div class="features">
+            <article class="feature feature-lead" data-reveal>
+              <span class="flow-icon"><i class="ph ph-users-three" aria-hidden="true"></i></span>
+              <div>
+                <h3>Práctica en grupo</h3>
+                <p>
+                  Salas de votación con enlace o código QR: el grupo vota en vivo entre 2 y 5
+                  temas y el anfitrión genera el ganador. El modo presentación muestra una
+                  pregunta a la vez con temporizador y se controla con un presentador remoto.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-video-camera" aria-hidden="true"></i></span>
+              <div>
+                <h3>Videollamada por tema</h3>
+                <p>
+                  Ventana flotante que sigue abierta al navegar. Hasta 12 participantes, con
+                  moderación de quien creó el tema. Nada se graba.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-waveform" aria-hidden="true"></i></span>
+              <div>
+                <h3>Tabla de sonidos</h3>
+                <p>
+                  Los 44 sonidos del inglés con su símbolo fonético, clips de pronunciación y
+                  desglose de palabras.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-cursor-click" aria-hidden="true"></i></span>
+              <div>
+                <h3>Palabra en contexto</h3>
+                <p>
+                  Cada palabra se explica según la frase donde aparece, no con una definición
+                  genérica de diccionario.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-cards" aria-hidden="true"></i></span>
+              <div>
+                <h3>Repaso espaciado</h3>
+                <p>
+                  Las palabras guardadas vuelven como tarjetas con el algoritmo SM-2, justo antes
+                  de que se olviden.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-sign-in" aria-hidden="true"></i></span>
+              <div>
+                <h3>Entrar sin fricción</h3>
+                <p>
+                  Invitado con solo un nombre o cuenta de Google. El invitado puede vincular su
+                  cuenta después sin perder avance.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-translate" aria-hidden="true"></i></span>
+              <div>
+                <h3>Bilingüe y accesible</h3>
+                <p>
+                  Interfaz en español e inglés, contraste AA, navegación por teclado y revisión
+                  de accesibilidad automatizada.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ARQUITECTURA ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Arquitectura</h2>
+            <p>
+              La app nunca habla con los modelos: pide la lección a la API y sigue el resultado
+              en tiempo real.
+            </p>
+          </div>
+
+          <div class="arch" data-reveal>
+            <article class="arch-node">
+              <i class="ph ph-browser" aria-hidden="true"></i>
+              <h3>Aplicación web</h3>
+              <p>
+                React 19 con TypeScript estricto, Vite, Redux Toolkit con RTK Query y Tailwind 4.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-hard-drives" aria-hidden="true"></i>
+              <h3>API de generación</h3>
+              <p>
+                Spring Boot con Spring AI. Escribe la lección por etapas y firma los accesos a
+                videollamada.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-cpu" aria-hidden="true"></i>
+              <h3>Modelos y voz</h3>
+              <p>
+                Un modelo principal y otro de respaldo en proveedor cloud, para texto y
+                transcripción. Narración con voz sintética.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-database" aria-hidden="true"></i>
+              <h3>Datos en tiempo real</h3>
+              <p>
+                Firebase Auth y Firestore. La app escucha el documento del tema mientras se
+                genera.
+              </p>
+            </article>
+          </div>
+
+          <dl class="tech" data-reveal>
+            <div>
+              <dt>Frontend</dt>
+              <dd>
+                <ul class="tags">
+                  <li>React 19</li>
+                  <li>TypeScript</li>
+                  <li>Vite</li>
+                  <li>Redux Toolkit</li>
+                  <li>RTK Query</li>
+                  <li>zod</li>
+                  <li>Tailwind 4</li>
+                  <li>i18next</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Backend</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>Spring AI</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>IA y voz</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Modelos en proveedor cloud</li>
+                  <li>Voz sintética</li>
+                  <li>Web Speech API</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Tiempo real</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Firebase Auth</li>
+                  <li>Firestore</li>
+                  <li>LiveKit</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Calidad</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Vitest</li>
+                  <li>Testing Library</li>
+                  <li>MSW</li>
+                  <li>axe-core</li>
+                  <li>ESLint jsx-a11y</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Despliegue</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Docker multietapa</li>
+                  <li>nginx</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ DECISIONES ============ -->
+      <section class="section">
+        <div class="container decisions-grid">
+          <div data-reveal>
+            <h2>Decisiones de ingeniería</h2>
+            <p>Seguridad, costo y calidad resueltos desde el diseño.</p>
+          </div>
+
+          <ul class="decisions">
+            <li data-reveal>
+              <h3>Reglas de seguridad como contrato</h3>
+              <p>
+                Solo el backend escribe temas. Los datos de cada estudiante son suyos y cada
+                tipo de documento valida su esquema. 55 casos de prueba cubren las reglas.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Votos que no se pisan</h3>
+              <p>
+                Cada voto es su propio documento y la sala avanza por una máquina de estados que
+                solo controla el anfitrión.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Lo que escribe el estudiante es dato</h3>
+              <p>
+                Los prompts aíslan el texto del usuario para evitar inyección de instrucciones y
+                limitan vocabulario y gramática al nivel elegido.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Costo bajo control</h3>
+              <p>
+                Límite de participantes y de solicitudes por hora, llamadas que se cierran al
+                vaciarse y video adaptable según la conexión.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Pruebas desde el inicio</h3>
+              <p>
+                51 archivos de prueba con la API simulada, más revisión de accesibilidad y reglas
+                de base de datos probadas contra el emulador.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ LLAMADO ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <div>
+              <h2>¿Quieres verlo funcionando?</h2>
+              <p>Es un proyecto privado. Escríbeme y agendamos una demostración.</p>
+            </div>
+            <a
+              class="btn btn-invert"
+              href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20de%20English%20For%20You."
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+              Quiero probarlo
+            </a>
+          </div>
+
+          <nav class="p-next" aria-label="Otros proyectos">
+            <a href="publicador.html"
+              >Publicador con IA <i class="ph ph-arrow-right" aria-hidden="true"></i
+            ></a>
+            <a href="mosaicos.html">TeselARte <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            <a href="menus-ra.html">QR Menú <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Isaac Santiago</p>
+        <a href="../index.html">Volver al inicio</a>
+      </div>
+    </footer>
+
+    <script src="../js/i18n.en.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TeselARte, fotomosaicos con realidad aumentada | Isaac Santiago</title>
+    <meta
+      name="description"
+      content="Plataforma que convierte de 50 a 300 fotos personales en un fotomosaico impreso que cobra vida con la cámara: motor de mosaicos, compra completa y visor de realidad aumentada en el navegador."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="TeselARte | Isaac Santiago" />
+    <meta
+      property="og:description"
+      content="Fotomosaicos impresos hechos con tus fotos, con visor de realidad aumentada en el navegador."
+    />
+    <meta
+      property="og:image"
+      content="https://sanlegas.github.io/assets/img/proyectos/teselarte-landing.webp"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232046d0'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EIS%3C/text%3E%3C/svg%3E"
+    />
+    <script src="../js/lang-boot.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+        } catch (e) {}
+        root.classList.add("js");
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Isaac Santiago, inicio">
+          <span class="brand-mark" aria-hidden="true">IS</span>
+          <span>Isaac Santiago</span>
+        </a>
+        <nav class="nav" id="menu" aria-label="Principal">
+          <a href="../index.html#soluciones">Qué resuelvo</a>
+          <a href="../index.html#proyectos" aria-current="true">Proyectos</a>
+          <a href="../index.html#ia">IA</a>
+          <a href="../index.html#experiencia">Experiencia</a>
+          <a href="../index.html#contacto">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-btn lang-btn"
+            type="button"
+            data-lang-toggle
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            <i class="ph ph-moon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon-btn menu-btn"
+            type="button"
+            data-menu-toggle
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <i class="ph ph-list" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ============ ENCABEZADO ============ -->
+      <section class="p-hero">
+        <div class="container">
+          <a class="crumb" href="../index.html#proyectos">
+            <i class="ph ph-arrow-left" aria-hidden="true"></i>
+            Proyectos
+          </a>
+
+          <div class="p-hero-grid">
+            <div class="hero-copy">
+              <p class="status">MVP completo</p>
+              <h1>TeselARte</h1>
+              <p class="lead">
+                Convierte entre 50 y 300 fotos personales en un fotomosaico impreso que cobra
+                vida al apuntarle con la cámara.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary"
+                  href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20de%20TeselARte."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+                  Quiero probarlo
+                </a>
+                <a class="btn btn-ghost" href="#como-funciona">Cómo funciona</a>
+              </div>
+            </div>
+
+            <figure class="p-visual">
+              <img
+                src="../assets/img/proyectos/teselarte-landing.webp"
+                alt="Página de inicio de TeselARte con el titular Miles de momentos, una sola historia y un fotomosaico enmarcado en una sala interactiva"
+                width="1440"
+                height="900"
+                fetchpriority="high"
+              />
+            </figure>
+          </div>
+
+          <dl class="p-meta">
+            <div>
+              <dt>Tipo</dt>
+              <dd>Producto físico personalizado</dd>
+            </div>
+            <div>
+              <dt>Rol</dt>
+              <dd>Producto, motor, frontend y backend</dd>
+            </div>
+            <div>
+              <dt>Alcance</dt>
+              <dd>De la subida de fotos al cuadro con AR</dd>
+            </div>
+            <div>
+              <dt>Acceso</dt>
+              <dd>Privado, demo bajo solicitud</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ PROBLEMA Y SOLUCIÓN ============ -->
+      <section class="section section-tint">
+        <div class="container p-split">
+          <div class="p-problem" data-reveal>
+            <h2>El problema</h2>
+            <p>
+              Miles de fotos se quedan guardadas en el teléfono. Imprimir una deja fuera todas
+              las demás, y un collage no cuenta una historia.
+            </p>
+          </div>
+          <div class="p-solution" data-reveal>
+            <h2>La solución</h2>
+            <p>
+              Una imagen principal reconstruida con las fotos de la persona. De lejos se ve una
+              escena; de cerca, cada recuerdo. Con la cámara, las fotos originales aparecen
+              sobre el cuadro.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CÓMO FUNCIONA ============ -->
+      <section class="section" id="como-funciona">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Cómo funciona</h2>
+            <p>Un recorrido de compra completo, de las fotos al cuadro en la pared.</p>
+          </div>
+
+          <ol class="how" style="--cols: 5">
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-upload-simple" aria-hidden="true"></i></span>
+              <h3>Sube tus fotos</h3>
+              <p>
+                Una imagen principal y de 50 a 300 fotos en JPG, PNG, WebP o HEIC. Suben directo
+                al almacenamiento, en paralelo.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-eye" aria-hidden="true"></i></span>
+              <h3>Vista previa gratuita</h3>
+              <p>
+                Tres recortes comparan el original con los dos acabados disponibles: Natural y
+                Color fiel.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-credit-card" aria-hidden="true"></i></span>
+              <h3>Elige y paga</h3>
+              <p>
+                Estilo, tamaño y marco. Inicio de sesión con Google y pago con Stripe.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-printer" aria-hidden="true"></i></span>
+              <h3>Se genera la impresión</h3>
+              <p>
+                Al confirmarse el pago, un worker produce el archivo final en sRGB a 300 DPI.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-scan" aria-hidden="true"></i></span>
+              <h3>El cuadro cobra vida</h3>
+              <p>
+                Un QR privado abre el visor: la cámara reconoce el mosaico y muestra encima las
+                fotos originales.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ CAPTURA ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="shots">
+            <figure class="shot shot-wide" data-reveal>
+              <img
+                src="../assets/img/proyectos/teselarte-obra.webp"
+                alt="Acercamiento a un fotomosaico: la imagen de una pareja formada por miles de fotografías pequeñas"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+              <figcaption>
+                Una pieza real de 4,800 teselas en la sala interactiva. El detalle carga por
+                niveles conforme la vista se acerca.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FUNCIONES ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Qué hace</h2>
+          </div>
+
+          <div class="features">
+            <article class="feature feature-lead" data-reveal>
+              <span class="flow-icon"><i class="ph ph-scan" aria-hidden="true"></i></span>
+              <div>
+                <h3>Mosaico Vivo: realidad aumentada en el navegador</h3>
+                <p>
+                  El servidor localiza el cuadro y devuelve su posición. Después el teléfono
+                  sigue el movimiento con visión por computadora y superpone las fotos
+                  originales. Sin instalar una aplicación.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-cube" aria-hidden="true"></i></span>
+              <div>
+                <h3>Sala 3D interactiva</h3>
+                <p>
+                  La página de inicio muestra el cuadro en una sala. Se puede acercar con rueda,
+                  gesto o teclado hasta ver cada fotografía.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-shopping-bag" aria-hidden="true"></i></span>
+              <div>
+                <h3>Compra de principio a fin</h3>
+                <p>
+                  Pedido anónimo que se reclama al iniciar sesión, pago, descarga y seguimiento.
+                  El pedido se retoma si se cierra la pestaña.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-palette" aria-hidden="true"></i></span>
+              <div>
+                <h3>Dos acabados de color</h3>
+                <p>
+                  Natural conserva cada foto como es. Color fiel aplica un tinte local para
+                  acercarse a la imagen principal sin perder detalle.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-lock-key" aria-hidden="true"></i></span>
+              <div>
+                <h3>Privacidad por diseño</h3>
+                <p>
+                  Los originales se borran a los 7 días, la sesión de cámara dura 15 minutos y
+                  los cuadros de video nunca se guardan.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
+              <div>
+                <h3>Protección contra abuso</h3>
+                <p>
+                  Verificación antes de la vista previa, enlaces firmados para subir archivos y
+                  sesiones con protección CSRF.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-copy" aria-hidden="true"></i></span>
+              <div>
+                <h3>Revisión de las fotos</h3>
+                <p>
+                  Antes de generar, un worker valida y normaliza cada imagen y detecta
+                  duplicados.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ARQUITECTURA ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Arquitectura</h2>
+            <p>
+              El navegador sube directo al almacenamiento; la API coordina pedidos y los workers
+              hacen el trabajo pesado.
+            </p>
+          </div>
+
+          <div class="arch" data-reveal>
+            <article class="arch-node">
+              <i class="ph ph-browser" aria-hidden="true"></i>
+              <h3>Aplicación del cliente</h3>
+              <p>
+                React 18 y Vite, con rutas de carga diferida, PWA, sala en Three.js y visor de
+                cámara.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-hard-drives" aria-hidden="true"></i>
+              <h3>API y pedidos</h3>
+              <p>
+                FastAPI con PostgreSQL y Redis. Sesiones por cookie, Google con PKCE y webhook
+                firmado de Stripe.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-cpu" aria-hidden="true"></i>
+              <h3>Motor y workers</h3>
+              <p>
+                Arman el mosaico, generan el archivo de impresión y preparan la experiencia de
+                cámara con su QR.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-cloud" aria-hidden="true"></i>
+              <h3>Almacenamiento privado</h3>
+              <p>
+                Compatible con S3, con enlaces prefirmados. Los archivos no pasan por la API.
+              </p>
+            </article>
+          </div>
+
+          <dl class="tech" data-reveal>
+            <div>
+              <dt>Frontend</dt>
+              <dd>
+                <ul class="tags">
+                  <li>React 18</li>
+                  <li>Vite</li>
+                  <li>Three.js</li>
+                  <li>WebGL</li>
+                  <li>OpenCV.js</li>
+                  <li>PWA</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Backend</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Python</li>
+                  <li>FastAPI</li>
+                  <li>PostgreSQL</li>
+                  <li>Redis</li>
+                  <li>Alembic</li>
+                  <li>Docker</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Visión por computadora</dt>
+              <dd>
+                <ul class="tags">
+                  <li>SIFT</li>
+                  <li>Homografía</li>
+                  <li>Flujo óptico Lucas-Kanade</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Pagos y acceso</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Stripe Checkout</li>
+                  <li>Google OAuth con PKCE</li>
+                  <li>Cloudflare Turnstile</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ DECISIONES ============ -->
+      <section class="section">
+        <div class="container decisions-grid">
+          <div data-reveal>
+            <h2>Decisiones de ingeniería</h2>
+            <p>La parte difícil es que la realidad aumentada se sienta estable en un teléfono.</p>
+          </div>
+
+          <ul class="decisions">
+            <li data-reveal>
+              <h3>El servidor ubica, el teléfono sigue</h3>
+              <p>
+                Localizar el cuadro es costoso; seguirlo no. El servidor responde una vez y el
+                dispositivo mantiene la posición cuadro a cuadro con flujo óptico.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Dos renderizadores</h3>
+              <p>
+                WebGL con atlas de texturas en escritorio y transformaciones CSS en móviles, con
+                un presupuesto de cargas por cuadro para no trabar la cámara.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>La vista previa no regala el producto</h3>
+              <p>
+                Antes del pago solo se muestran tres recortes. El mosaico completo se genera
+                hasta que la compra se confirma.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Detalle progresivo</h3>
+              <p>
+                La sala carga el mosaico a 480 px, luego a 1,200 px y solo las fotografías
+                visibles al acercarse.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Prueba de extremo a extremo sin terceros</h3>
+              <p>
+                Un modo local sustituye solo el inicio de sesión y el pago. Subida, generación y
+                archivo final usan el código real.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ LLAMADO ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <div>
+              <h2>¿Quieres verlo funcionando?</h2>
+              <p>Es un proyecto privado. Escríbeme y agendamos una demostración.</p>
+            </div>
+            <a
+              class="btn btn-invert"
+              href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20de%20TeselARte."
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+              Quiero probarlo
+            </a>
+          </div>
+
+          <nav class="p-next" aria-label="Otros proyectos">
+            <a href="publicador.html"
+              >Publicador con IA <i class="ph ph-arrow-right" aria-hidden="true"></i
+            ></a>
+            <a href="menus-ra.html">QR Menú <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            <a href="english4u.html"
+              >English For You <i class="ph ph-arrow-right" aria-hidden="true"></i
+            ></a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Isaac Santiago</p>
+        <a href="../index.html">Volver al inicio</a>
+      </div>
+    </footer>
+
+    <script src="../js/i18n.en.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

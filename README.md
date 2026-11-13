@@ -1,55 +1,37 @@
-# Isaac Santiago — Developer Terminal
+# Portafolio de Isaac Santiago
 
-A terminal-first portfolio built with native HTML, CSS and JavaScript. Everything lives inside one terminal window: welcome screen, command shortcuts, transcript, input and resume download. Compatible with GitHub Pages; no build step or runtime dependencies.
+Sitio estático publicado en GitHub Pages: <https://sanlegas.github.io>. HTML, CSS y JavaScript nativos, sin paso de build ni dependencias que instalar.
 
-## Run locally
+## Verlo en local
 
 ```sh
 python3 -m http.server 4173
 ```
 
-Open http://localhost:4173. Use HTTP rather than `file://` so JavaScript modules load correctly.
+Abrir <http://localhost:4173>.
 
-## Commands
+## Estructura
 
-| Command            | Output                               |
-| ------------------ | ------------------------------------ |
-| `welcome`          | Restore the starting screen          |
-| `about` / `whoami` | Introduction and highlights          |
-| `experience`       | Professional career                  |
-| `skills` / `stack` | Technologies and tools               |
-| `projects`         | Selected projects and results        |
-| `education`        | Education, credentials and languages |
-| `cv` / `resume`    | Download the original Word resume    |
-| `contact`          | Email, LinkedIn and phone            |
-| `blog`             | Writing status                       |
-| `help` / `ls`      | Commands and keyboard shortcuts      |
-| `history`          | Session command history              |
-| `clear` / `cls`    | Clear the transcript                 |
+| Ruta | Contenido |
+| --- | --- |
+| `index.html` | Inicio: perfil, qué resuelvo, proyectos, IA, experiencia, stack y contacto |
+| `proyectos/` | Una página por proyecto: Publicador con IA, TeselARte, QR Menú y English For You |
+| `css/styles.css` | Estilos base, tema claro y oscuro |
+| `css/project.css` | Estilos de las páginas de proyecto |
+| `js/main.js` | Cambio de tema, menú móvil y aparición al hacer scroll |
+| `js/viewer.js` | Visor 3D bajo demanda de la página de QR Menú |
+| `js/lang-boot.js`, `js/i18n.js`, `js/i18n.en.js` | Idiomas español e inglés |
+| `assets/` | Imágenes, modelo 3D y CV |
 
-Commands also accept a `./` prefix, as shown in the welcome screen. Clicking a command types it into the prompt, then runs it. Typed and clicked commands append output to the same transcript. Typing manually cancels any running typing animation. Reduced-motion preferences disable that animation.
+## Idiomas
 
-Enter runs a command; Tab completes it; repeated Tab cycles matches; Shift+Tab moves focus backward; ↑/↓ browse history; Escape resets input; Ctrl+L clears the transcript from the input; `/` focuses the prompt when outside a text field.
+El español vive en el HTML y es la fuente. El inglés es un diccionario en `js/i18n.en.js` cuya llave es el texto en español tal como aparece en la página.
 
-History is stored only in memory, with a limit of 100 commands and 20 output blocks. Input is rendered as text, never executed as HTML or system commands. The introduction, email and resume download remain accessible without JavaScript.
+- El idioma inicial sale del navegador del visitante: español si lo prefiere, inglés en cualquier otro caso. El botón del encabezado lo cambia y guarda la elección.
+- Para enlazar directo a una versión: `?lang=en` o `?lang=es`.
+- Al editar un texto en español hay que actualizar su llave en `js/i18n.en.js`; si no, ese texto se queda en español en la versión en inglés. Para revisar, abrir la página con `?lang=en` y ejecutar `i18n.missing()` en la consola: solo deben aparecer nombres propios y tecnologías.
 
-## Update content
+## Versiones anteriores
 
-- `index.html`: welcome screen, about template, terminal structure and metadata.
-- `portfolio.js`: career, skills, projects and resume path.
-- `script.js`: rendering, education, contact and console interaction.
-- `commands.js`: command descriptions, aliases and completion.
-- `styles.css`: terminal layout, responsive styling and motion preferences.
-- `assets/documents/Isaac_Santiago_Senior_Full_Stack_Developer_Resume.docx`: unchanged copy of the supplied English resume.
-
-Public interface and content are in English. Some earlier Spanish command aliases remain accepted for compatibility but are not suggested. Company and institution names retain their official spelling. Legacy directories `oldPortafolio/` and `juegos/` remain unchanged.
-
-## Verify
-
-```sh
-node --test tests/commands.test.mjs
-# With the local server running and Playwright available:
-node tests/browser.cjs
-```
-
-For an external Playwright installation, set `NODE_PATH` to its `node_modules` directory. Use `BROWSER_CHANNEL=chrome` to test with installed Google Chrome instead of Playwright's Chromium. Browser coverage includes command output, animation cancellation, keyboard controls, session limits, mobile sizing, reduced motion, download integrity and the no-JavaScript fallback.
+- `terminal/`: portafolio anterior con interfaz de terminal.
+- `oldPortafolio/` y `juegos/`: contenido previo, sin cambios.

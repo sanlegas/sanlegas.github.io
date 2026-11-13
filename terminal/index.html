@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f0d" />
+    <meta
+      name="description"
+      content="Isaac Santiago — Senior Full Stack Developer. Explore 9+ years of experience with Java, Spring Boot, React and TypeScript through an interactive terminal."
+    />
+    <meta
+      property="og:title"
+      content="Isaac Santiago | Interactive Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Open a terminal. Meet the developer. Explore my work, stack and experience, or download my resume."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <title>Isaac Santiago | Developer Terminal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#command">Jump to command input</a>
+    <main
+      id="main"
+      class="terminal"
+      aria-label="Isaac Santiago's portfolio terminal"
+    >
+      <header class="terminal-titlebar">
+        <span class="window-mark" aria-hidden="true">&gt;_</span>
+        <span>sanlegas<span class="muted"> — portfolio</span></span>
+        <span class="terminal-path">guest@sanlegas: ~</span>
+        <button
+          type="button"
+          data-command="help"
+          class="title-help"
+          aria-label="Show terminal help"
+        >
+          ?
+        </button>
+      </header>
+      <div
+        class="output-scroll"
+        id="output-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Terminal transcript"
+      >
+        <div id="output">
+          <section class="welcome" aria-labelledby="name">
+            <p class="boot-line">
+              <span class="accent">[ok]</span> Portfolio loaded. Connection is
+              local.
+            </p>
+            <p class="executed-command">
+              <span>guest@sanlegas</span
+              ><span class="muted">:~$</span> ./welcome
+            </p>
+            <pre class="ascii-name" aria-hidden="true">
+ ___ ____    _      _    ____
+|_ _/ ___|  / \    / \  / ___|
+ | |\___ \ / _ \  / _ \| |
+ | | ___) / ___ \/ ___ \ |___
+|___|____/_/   \_\_/   \_\____|</pre
+            >
+            <h1 id="name">Isaac Santiago<span class="accent">_</span></h1>
+            <p class="welcome-role">Senior Full Stack Developer</p>
+            <p class="welcome-summary">
+              9+ years building software for insurance, finance and
+              government.<br />Java / Spring Boot / React / TypeScript. Based in
+              Oaxaca, Mexico.
+            </p>
+            <p class="welcome-instruction">
+              This is my portfolio. <strong>You have the terminal.</strong
+              ><br />Type a command below, or select one to run it.
+            </p>
+            <nav id="navigation" aria-label="Available commands">
+              <button type="button" data-command="about">
+                <span>about</span><small>Meet the developer</small>
+              </button>
+              <button type="button" data-command="experience">
+                <span>experience</span><small>Follow my career</small>
+              </button>
+              <button type="button" data-command="projects">
+                <span>projects</span><small>Explore my work</small>
+              </button>
+              <button type="button" data-command="skills">
+                <span>skills</span><small>Inspect my stack</small>
+              </button>
+              <button type="button" data-command="education">
+                <span>education</span><small>Learning & credentials</small>
+              </button>
+              <button type="button" data-command="cv">
+                <span>cv</span><small>Download my resume</small>
+              </button>
+              <button type="button" data-command="contact">
+                <span>contact</span><small>Let's connect</small>
+              </button>
+              <button type="button" data-command="help">
+                <span>help</span><small>See all commands</small>
+              </button>
+            </nav>
+            <p class="welcome-hint">
+              <span class="accent">→</span> Try
+              <button
+                type="button"
+                class="inline-command"
+                data-command="whoami"
+              >
+                whoami
+              </button>
+              to get started.
+            </p>
+          </section>
+        </div>
+      </div>
+      <div class="command-area">
+        <div class="input-caption">
+          <span id="session-state"
+            ><span class="status-dot" aria-hidden="true"></span>Ready for your
+            next command</span
+          ><button type="button" data-command="clear">clear</button>
+        </div>
+        <form id="command-form" autocomplete="off">
+          <label for="command" class="prompt"
+            ><span class="prompt-user">guest@sanlegas</span
+            ><span class="prompt-path">:~</span
+            ><span class="prompt-dollar">$</span
+            ><span class="sr-only"> Enter a command</span></label
+          >
+          <input
+            id="command"
+            name="command"
+            type="text"
+            placeholder="type help, then press enter"
+            spellcheck="false"
+            autocapitalize="off"
+            enterkeyhint="go"
+            maxlength="200"
+            aria-describedby="keyboard-help suggestions"
+          />
+          <button type="submit" class="run-command" aria-label="Run command">
+            Enter <span aria-hidden="true">↵</span>
+          </button>
+        </form>
+        <p id="suggestions" class="suggestions" aria-live="polite"></p>
+        <div id="keyboard-help" class="keyboard-help">
+          <span><kbd>Tab</kbd> autocomplete</span
+          ><span><kbd>↑ ↓</kbd> history</span><span><kbd>Esc</kbd> reset</span
+          ><span class="desktop-hint"><kbd>/</kbd> focus</span
+          ><a
+            href="assets/documents/Isaac_Santiago_Senior_Full_Stack_Developer_Resume.docx"
+            download
+            >resume.docx ↓</a
+          >
+        </div>
+      </div>
+      <footer class="statusbar">
+        <span><span class="accent">●</span> LOCAL SESSION</span
+        ><span>Java · Spring Boot · React · TypeScript</span
+        ><span id="command-count">0 commands</span>
+      </footer>
+      <noscript
+        ><p class="noscript">
+          Enable JavaScript to use the terminal.
+          <a
+            href="assets/documents/Isaac_Santiago_Senior_Full_Stack_Developer_Resume.docx"
+            download
+            >Download my resume</a
+          >
+          or <a href="mailto:isaacsanlegas@gmail.com">email me</a>.
+        </p></noscript
+      >
+    </main>
+    <template id="about-template">
+      <article class="result">
+        <p class="section-label">ABOUT / ISAAC DAVID SANTIAGO LEGASPI</p>
+        <h2>From the interface to the architecture.</h2>
+        <p class="body-copy">
+          I'm a Senior Full Stack Developer with 9+ years of experience
+          building, modernizing and supporting enterprise applications across
+          insurance, financial services and government.
+        </p>
+        <p class="body-copy">
+          I connect React and TypeScript interfaces with Java and Spring Boot
+          services, focusing on secure integrations, microservices and
+          maintainable code.
+        </p>
+        <div class="metrics">
+          <div><strong>9+</strong><span>years of experience</span></div>
+          <div>
+            <strong>~80%</strong><span>less payment processing time</span>
+          </div>
+          <div>
+            <strong>~50%</strong><span>less quote generation time</span>
+          </div>
+        </div>
+        <p class="result-note">
+          Approximate improvements over previous workflows on MetLife projects.
+        </p>
+        <div class="tags">
+          <span>Java</span><span>Spring Boot</span><span>React</span
+          ><span>TypeScript</span><span>Node.js</span>
+        </div>
+        <p class="next-command">
+          Next:
+          <button
+            type="button"
+            class="inline-command"
+            data-command="experience"
+          >
+            experience
+          </button>
+          to explore my career.
+        </p>
+      </article>
+    </template>
+    <p
+      id="announcement"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></p>
+  </body>
+</html>

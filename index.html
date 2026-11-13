@@ -1,229 +1,833 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0f0d" />
+    <title>Isaac Santiago | Soluciones digitales con tecnología e IA</title>
     <meta
       name="description"
-      content="Isaac Santiago — Senior Full Stack Developer. Explore 9+ years of experience with Java, Spring Boot, React and TypeScript through an interactive terminal."
+      content="Ingeniero de software con más de 9 años de experiencia. Resuelvo problemas digitales con tecnología e inteligencia artificial: automatización, productos web e integración de IA."
     />
-    <meta
-      property="og:title"
-      content="Isaac Santiago | Interactive Portfolio"
-    />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Isaac Santiago | Soluciones digitales con tecnología e IA" />
     <meta
       property="og:description"
-      content="Open a terminal. Meet the developer. Explore my work, stack and experience, or download my resume."
+      content="Automatización con IA, productos web y modernización de sistemas. Más de 9 años en seguros, finanzas y gobierno."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <title>Isaac Santiago | Developer Terminal</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    <meta property="og:image" content="https://sanlegas.github.io/assets/img/isaac-santiago.jpg" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232046d0'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EIS%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Aplica el tema guardado antes de pintar para evitar parpadeo -->
+    <script src="js/lang-boot.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+        } catch (e) {}
+        root.classList.add("js");
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+    <!-- Iconos: Phosphor (https://phosphoricons.com) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <a class="skip-link" href="#command">Jump to command input</a>
-    <main
-      id="main"
-      class="terminal"
-      aria-label="Isaac Santiago's portfolio terminal"
-    >
-      <header class="terminal-titlebar">
-        <span class="window-mark" aria-hidden="true">&gt;_</span>
-        <span>sanlegas<span class="muted"> — portfolio</span></span>
-        <span class="terminal-path">guest@sanlegas: ~</span>
-        <button
-          type="button"
-          data-command="help"
-          class="title-help"
-          aria-label="Show terminal help"
-        >
-          ?
-        </button>
-      </header>
-      <div
-        class="output-scroll"
-        id="output-scroll"
-        tabindex="0"
-        role="region"
-        aria-label="Terminal transcript"
-      >
-        <div id="output">
-          <section class="welcome" aria-labelledby="name">
-            <p class="boot-line">
-              <span class="accent">[ok]</span> Portfolio loaded. Connection is
-              local.
-            </p>
-            <p class="executed-command">
-              <span>guest@sanlegas</span
-              ><span class="muted">:~$</span> ./welcome
-            </p>
-            <pre class="ascii-name" aria-hidden="true">
- ___ ____    _      _    ____
-|_ _/ ___|  / \    / \  / ___|
- | |\___ \ / _ \  / _ \| |
- | | ___) / ___ \/ ___ \ |___
-|___|____/_/   \_\_/   \_\____|</pre
-            >
-            <h1 id="name">Isaac Santiago<span class="accent">_</span></h1>
-            <p class="welcome-role">Senior Full Stack Developer</p>
-            <p class="welcome-summary">
-              9+ years building software for insurance, finance and
-              government.<br />Java / Spring Boot / React / TypeScript. Based in
-              Oaxaca, Mexico.
-            </p>
-            <p class="welcome-instruction">
-              This is my portfolio. <strong>You have the terminal.</strong
-              ><br />Type a command below, or select one to run it.
-            </p>
-            <nav id="navigation" aria-label="Available commands">
-              <button type="button" data-command="about">
-                <span>about</span><small>Meet the developer</small>
-              </button>
-              <button type="button" data-command="experience">
-                <span>experience</span><small>Follow my career</small>
-              </button>
-              <button type="button" data-command="projects">
-                <span>projects</span><small>Explore my work</small>
-              </button>
-              <button type="button" data-command="skills">
-                <span>skills</span><small>Inspect my stack</small>
-              </button>
-              <button type="button" data-command="education">
-                <span>education</span><small>Learning & credentials</small>
-              </button>
-              <button type="button" data-command="cv">
-                <span>cv</span><small>Download my resume</small>
-              </button>
-              <button type="button" data-command="contact">
-                <span>contact</span><small>Let's connect</small>
-              </button>
-              <button type="button" data-command="help">
-                <span>help</span><small>See all commands</small>
-              </button>
-            </nav>
-            <p class="welcome-hint">
-              <span class="accent">→</span> Try
-              <button
-                type="button"
-                class="inline-command"
-                data-command="whoami"
-              >
-                whoami
-              </button>
-              to get started.
-            </p>
-          </section>
-        </div>
-      </div>
-      <div class="command-area">
-        <div class="input-caption">
-          <span id="session-state"
-            ><span class="status-dot" aria-hidden="true"></span>Ready for your
-            next command</span
-          ><button type="button" data-command="clear">clear</button>
-        </div>
-        <form id="command-form" autocomplete="off">
-          <label for="command" class="prompt"
-            ><span class="prompt-user">guest@sanlegas</span
-            ><span class="prompt-path">:~</span
-            ><span class="prompt-dollar">$</span
-            ><span class="sr-only"> Enter a command</span></label
-          >
-          <input
-            id="command"
-            name="command"
-            type="text"
-            placeholder="type help, then press enter"
-            spellcheck="false"
-            autocapitalize="off"
-            enterkeyhint="go"
-            maxlength="200"
-            aria-describedby="keyboard-help suggestions"
-          />
-          <button type="submit" class="run-command" aria-label="Run command">
-            Enter <span aria-hidden="true">↵</span>
-          </button>
-        </form>
-        <p id="suggestions" class="suggestions" aria-live="polite"></p>
-        <div id="keyboard-help" class="keyboard-help">
-          <span><kbd>Tab</kbd> autocomplete</span
-          ><span><kbd>↑ ↓</kbd> history</span><span><kbd>Esc</kbd> reset</span
-          ><span class="desktop-hint"><kbd>/</kbd> focus</span
-          ><a
-            href="assets/documents/Isaac_Santiago_Senior_Full_Stack_Developer_Resume.docx"
-            download
-            >resume.docx ↓</a
-          >
-        </div>
-      </div>
-      <footer class="statusbar">
-        <span><span class="accent">●</span> LOCAL SESSION</span
-        ><span>Java · Spring Boot · React · TypeScript</span
-        ><span id="command-count">0 commands</span>
-      </footer>
-      <noscript
-        ><p class="noscript">
-          Enable JavaScript to use the terminal.
-          <a
-            href="assets/documents/Isaac_Santiago_Senior_Full_Stack_Developer_Resume.docx"
-            download
-            >Download my resume</a
-          >
-          or <a href="mailto:isaacsanlegas@gmail.com">email me</a>.
-        </p></noscript
-      >
-    </main>
-    <template id="about-template">
-      <article class="result">
-        <p class="section-label">ABOUT / ISAAC DAVID SANTIAGO LEGASPI</p>
-        <h2>From the interface to the architecture.</h2>
-        <p class="body-copy">
-          I'm a Senior Full Stack Developer with 9+ years of experience
-          building, modernizing and supporting enterprise applications across
-          insurance, financial services and government.
-        </p>
-        <p class="body-copy">
-          I connect React and TypeScript interfaces with Java and Spring Boot
-          services, focusing on secure integrations, microservices and
-          maintainable code.
-        </p>
-        <div class="metrics">
-          <div><strong>9+</strong><span>years of experience</span></div>
-          <div>
-            <strong>~80%</strong><span>less payment processing time</span>
-          </div>
-          <div>
-            <strong>~50%</strong><span>less quote generation time</span>
-          </div>
-        </div>
-        <p class="result-note">
-          Approximate improvements over previous workflows on MetLife projects.
-        </p>
-        <div class="tags">
-          <span>Java</span><span>Spring Boot</span><span>React</span
-          ><span>TypeScript</span><span>Node.js</span>
-        </div>
-        <p class="next-command">
-          Next:
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Isaac Santiago, inicio">
+          <span class="brand-mark" aria-hidden="true">IS</span>
+          <span>Isaac Santiago</span>
+        </a>
+
+        <nav class="nav" id="menu" aria-label="Principal">
+          <a href="#soluciones">Qué resuelvo</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#ia">IA</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
           <button
+            class="icon-btn lang-btn"
             type="button"
-            class="inline-command"
-            data-command="experience"
+            data-lang-toggle
+            aria-label="Switch to English"
           >
-            experience
+            EN
           </button>
-          to explore my career.
-        </p>
-      </article>
-    </template>
-    <p
-      id="announcement"
-      class="sr-only"
-      role="status"
-      aria-live="polite"
-      aria-atomic="true"
-    ></p>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            <i class="ph ph-moon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon-btn menu-btn"
+            type="button"
+            data-menu-toggle
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <i class="ph ph-list" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker">Ingeniería de software e IA aplicada</p>
+            <h1>Resuelvo problemas con <em>tecnología e IA</em>.</h1>
+            <p class="lead">
+              Ingeniero de software con más de 9 años en seguros, finanzas y gobierno. Construyo
+              productos digitales y automatizaciones con IA.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#proyectos">
+                Ver proyectos
+                <i class="ph ph-arrow-down" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-ghost" href="#contacto">Contacto</a>
+            </div>
+          </div>
+
+          <figure class="hero-photo">
+            <img
+              src="assets/img/isaac-santiago.jpg"
+              alt="Retrato de Isaac Santiago"
+              width="480"
+              height="480"
+              fetchpriority="high"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCIA Y CUALIDADES ============ -->
+      <section class="metrics" aria-label="Experiencia y cualidades">
+        <div class="container metrics-grid">
+          <div class="metric" data-reveal>
+            <p class="metric-value">9+</p>
+            <p class="metric-label">años construyendo software empresarial</p>
+          </div>
+          <div class="metric" data-reveal>
+            <p class="metric-value metric-value-text">Liderazgo</p>
+            <p class="metric-label">coordiné equipos y decisiones técnicas como Tech Lead</p>
+          </div>
+          <div class="metric" data-reveal>
+            <p class="metric-value metric-value-text">Autonomía</p>
+            <p class="metric-label">saco adelante proyectos completos por cuenta propia</p>
+          </div>
+          <div class="metric" data-reveal>
+            <p class="metric-value metric-value-text">Comunicación</p>
+            <p class="metric-label">traduzco necesidades del negocio a soluciones técnicas</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ QUÉ RESUELVO ============ -->
+      <section class="section" id="soluciones">
+        <div class="container solve-grid">
+          <div class="solve-intro" data-reveal>
+            <h2>Qué resuelvo</h2>
+            <p>
+              Parto del problema del negocio, no de la herramienta. La tecnología se elige después.
+            </p>
+          </div>
+
+          <ul class="solve-list">
+            <li data-reveal>
+              <h3>Procesos manuales y repetitivos</h3>
+              <p>
+                Los convierto en flujos automatizados donde la IA lee, decide y ejecuta, con
+                supervisión humana donde importa.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Información que nadie alcanza a leer</h3>
+              <p>
+                Construyo procesos que leen, resumen y transforman contenido en algo publicable o
+                accionable.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Sistemas legados que frenan la operación</h3>
+              <p>
+                Los modernizo por fases y con resultados medibles: pagos, cotizaciones y trámites
+                más rápidos.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Ideas que necesitan volverse producto</h3>
+              <p>
+                Llevo la idea del planteamiento funcional al despliegue: frontend, backend, datos e
+                integraciones.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ PROYECTOS ============ -->
+      <section class="section section-tint" id="proyectos">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Proyectos propios</h2>
+            <p>
+              Productos que diseñé y construí completos. Por ahora son privados: cada página
+              explica cómo funcionan y cómo pedir una demostración.
+            </p>
+          </div>
+
+          <div class="projects">
+            <article class="project project-featured" id="publicador" data-reveal>
+              <div class="project-body">
+                <p class="project-status">En operación</p>
+                <h3><a class="project-link" href="proyectos/publicador.html">Publicador con IA</a></h3>
+                <p class="project-summary">
+                  Lee noticias locales, las clasifica y redacta con IA, genera imagen y video, y
+                  publica en Facebook, YouTube y TikTok.
+                </p>
+                <dl class="project-facts">
+                  <div>
+                    <dt>Problema</dt>
+                    <dd>
+                      Leer cientos de publicaciones, decidir cuáles valen y adaptarlas a cada red
+                      consume horas todos los días.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Solución</dt>
+                    <dd>
+                      Un flujo dirigido con IA y aprobación humana, de la recolección a la
+                      publicación.
+                    </dd>
+                  </div>
+                </dl>
+                <div class="project-foot">
+                  <ul class="tags" aria-label="Temas">
+                    <li>Automatización</li>
+                    <li>IA generativa</li>
+                    <li>Modelos locales</li>
+                  </ul>
+                  <span class="project-more" aria-hidden="true">
+                    Ver proyecto <i class="ph ph-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
+
+              <ol class="flow-steps" aria-label="Cómo funciona el Publicador">
+                <li>
+                  <span class="flow-icon"><i class="ph ph-rss" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>Recolecta</strong>
+                    <span>Publicaciones por palabras clave de cada perfil.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="flow-icon"><i class="ph ph-funnel" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>Clasifica y agrupa</strong>
+                    <span>Descarta duplicados y une la misma noticia.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="flow-icon"><i class="ph ph-user-check" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>Aprueba</strong>
+                    <span>Una persona decide qué se publica.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="flow-icon"
+                    ><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i
+                  ></span>
+                  <div>
+                    <strong>Genera y publica</strong>
+                    <span>Texto, imágenes o reels informativos.</span>
+                  </div>
+                </li>
+              </ol>
+            </article>
+
+            <article class="project project-featured project-reverse" id="teselarte" data-reveal>
+              <div class="project-media">
+                <img
+                  src="assets/img/proyectos/teselarte-landing.webp"
+                  alt="Página de inicio de TeselARte con un fotomosaico enmarcado en una sala"
+                  width="1440"
+                  height="900"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <p class="project-status">MVP completo</p>
+                <h3><a class="project-link" href="proyectos/mosaicos.html">TeselARte</a></h3>
+                <p class="project-summary">
+                  Fotomosaicos impresos hechos con 50 a 300 fotos personales. Al apuntar la
+                  cámara, las fotos originales aparecen sobre el cuadro.
+                </p>
+                <dl class="project-facts">
+                  <div>
+                    <dt>Problema</dt>
+                    <dd>Miles de fotos guardadas en el teléfono que nadie vuelve a ver.</dd>
+                  </div>
+                  <div>
+                    <dt>Solución</dt>
+                    <dd>
+                      Un cuadro hecho con todas ellas, comprado en línea de principio a fin.
+                    </dd>
+                  </div>
+                </dl>
+                <div class="project-foot">
+                  <ul class="tags" aria-label="Temas">
+                    <li>Visión por computadora</li>
+                    <li>Realidad aumentada</li>
+                    <li>Comercio en línea</li>
+                  </ul>
+                  <span class="project-more" aria-hidden="true">
+                    Ver proyecto <i class="ph ph-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project project-wide" id="menus-ra" data-reveal>
+              <div class="project-media project-media-phones">
+                <img
+                  src="assets/img/proyectos/qrmenu-menu.webp"
+                  alt="Menú digital de una cafetería de demostración en un celular"
+                  width="390"
+                  height="844"
+                  loading="lazy"
+                />
+                <img
+                  src="assets/img/proyectos/qrmenu-platillo.webp"
+                  alt="Ficha de un capuchino con pestañas de foto y realidad aumentada"
+                  width="390"
+                  height="844"
+                  loading="lazy"
+                />
+                <img
+                  src="assets/img/proyectos/qrmenu-pedido.webp"
+                  alt="Carrito con botón para enviar el pedido por WhatsApp"
+                  width="390"
+                  height="844"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <p class="project-status">En desarrollo</p>
+                <h3><a class="project-link" href="proyectos/menus-ra.html">QR Menú</a></h3>
+                <p class="project-summary">
+                  Menú digital para restaurantes con pedidos por WhatsApp y platillos en 3D y
+                  realidad aumentada creados a partir de fotos.
+                </p>
+                <dl class="project-facts">
+                  <div>
+                    <dt>Problema</dt>
+                    <dd>El menú impreso no muestra el platillo ni se actualiza al ritmo del negocio.</dd>
+                  </div>
+                  <div>
+                    <dt>Solución</dt>
+                    <dd>
+                      Un QR permanente que lleva a un menú editable, con el platillo sobre la
+                      mesa del comensal.
+                    </dd>
+                  </div>
+                </dl>
+                <div class="project-foot">
+                  <ul class="tags" aria-label="Temas">
+                    <li>Realidad aumentada</li>
+                    <li>Generación 3D con IA</li>
+                  </ul>
+                  <span class="project-more" aria-hidden="true">
+                    Ver proyecto <i class="ph ph-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project project-narrow" id="english4u" data-reveal>
+              <div class="project-media project-media-shot">
+                <img
+                  src="assets/img/proyectos/english-inicio.webp"
+                  alt="Pantalla de inicio de English For You con selector de tema y nivel"
+                  width="1440"
+                  height="900"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <p class="project-status">MVP funcional</p>
+                <h3>
+                  <a class="project-link" href="proyectos/english4u.html">English For You</a>
+                </h3>
+                <p class="project-summary">
+                  Lecciones de inglés generadas con IA sobre el tema que elijas, a tu nivel.
+                </p>
+                <dl class="project-facts">
+                  <div>
+                    <dt>Problema</dt>
+                    <dd>Textos genéricos y nadie que corrija al hablar.</dd>
+                  </div>
+                  <div>
+                    <dt>Solución</dt>
+                    <dd>
+                      Artículo, audio, quiz y corrección de respuestas habladas, con práctica en
+                      grupo.
+                    </dd>
+                  </div>
+                </dl>
+                <div class="project-foot">
+                  <ul class="tags" aria-label="Temas">
+                    <li>IA generativa</li>
+                    <li>Educación</li>
+                  </ul>
+                  <span class="project-more" aria-hidden="true">
+                    Ver proyecto <i class="ph ph-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ IA ============ -->
+      <section class="section" id="ia">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>IA aplicada con criterio de ingeniería</h2>
+            <p>
+              Uso la IA como una pieza más del sistema: con pruebas, límites claros y resultados
+              verificables.
+            </p>
+          </div>
+
+          <div class="bento">
+            <article class="cell cell-flows" data-reveal>
+              <i class="ph ph-flow-arrow cell-icon" aria-hidden="true"></i>
+              <div>
+                <h3>Flujos automatizados y dirigidos con IA</h3>
+                <p>
+                  Diseño flujos donde los modelos leen, clasifican, redactan y ejecutan tareas paso
+                  a paso, con reglas y puntos de control humanos.
+                </p>
+                <ul class="tags">
+                  <li>Respaldo entre modelos</li>
+                  <li>Salidas tipadas</li>
+                  <li>Supervisión humana</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="cell cell-local" data-reveal>
+              <i class="ph ph-cpu cell-icon" aria-hidden="true"></i>
+              <div>
+                <h3>Modelos locales</h3>
+                <p>
+                  Modelos de texto e imagen, embeddings y clasificadores propios en equipo local,
+                  cuando la privacidad, el costo o la latencia lo piden.
+                </p>
+              </div>
+            </article>
+
+            <article class="cell cell-media" data-reveal>
+              <i class="ph ph-film-strip cell-icon" aria-hidden="true"></i>
+              <div>
+                <h3>IA generativa multimedia</h3>
+                <p>Imagen, video con narración, voz y modelos 3D a partir de fotos.</p>
+              </div>
+            </article>
+
+            <article class="cell cell-reading" data-reveal>
+              <i class="ph ph-file-magnifying-glass cell-icon" aria-hidden="true"></i>
+              <div>
+                <h3>Lectura y procesamiento</h3>
+                <p>Extracción, clasificación, agrupación por embeddings y OCR.</p>
+              </div>
+            </article>
+
+            <article class="cell cell-dev" data-reveal>
+              <i class="ph ph-code cell-icon" aria-hidden="true"></i>
+              <div>
+                <h3>Desarrollo asistido por IA</h3>
+                <p>
+                  Uso GitHub Copilot y Claude para acelerar pruebas, refactorización e
+                  implementación, y valido cada resultado antes de integrarlo. Certificado Claude
+                  101 de Anthropic (2026).
+                </p>
+              </div>
+            </article>
+
+            <article class="cell cell-integration" data-reveal>
+              <i class="ph ph-plugs-connected cell-icon" aria-hidden="true"></i>
+              <div>
+                <h3>Integración en productos</h3>
+                <p>Modelos de proveedor cloud y locales conectados a APIs y backends propios.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCIA ============ -->
+      <section class="section section-tint" id="experiencia">
+        <div class="container">
+          <div class="section-head section-head-row" data-reveal>
+            <div>
+              <h2>Experiencia profesional</h2>
+              <p>
+                Más de 9 años en software empresarial para seguros, servicios financieros y
+                gobierno.
+              </p>
+            </div>
+            <a
+              class="btn btn-ghost"
+              href="assets/documents/Isaac_Santiago_Senior_Full_Stack_Developer_Resume.docx"
+              download
+            >
+              <i class="ph ph-download-simple" aria-hidden="true"></i>
+              Descargar CV
+            </a>
+          </div>
+
+          <div class="xp" data-reveal>
+            <details class="xp-item" name="experiencia" open>
+              <summary>
+                <h3>Tata Consultancy Services</h3>
+                <span class="xp-role">Full Stack Developer · Cliente: MetLife</span>
+                <span class="xp-dates">sep 2024 - sep 2026</span>
+                <i class="ph ph-caret-down xp-caret" aria-hidden="true"></i>
+              </summary>
+              <div class="xp-body">
+                <ul class="xp-points">
+                  <li>
+                    Construí el flujo completo de pagos del Portal de Pagos en React y TypeScript,
+                    con Mercado Pago para tarjeta y efectivo. El proceso de pago quedó ≈80% más
+                    rápido.
+                  </li>
+                  <li>
+                    Implementé por cuenta propia un middleware de seguridad en Java y Spring Boot
+                    con cifrado RSA y AES, expiración de sesión con JWT y control de inactividad.
+                  </li>
+                  <li>
+                    Desarrollé la API de cotización de seguros (≈50% menos tiempo por cotización) y
+                    una estructura de catálogos adoptada en ≈12 catálogos.
+                  </li>
+                  <li>
+                    Trabajé con DDD, CI/CD en Azure Pipelines, despliegues en Kubernetes, SonarQube
+                    y ≈90% de cobertura de pruebas en frontend.
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Tecnologías">
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>SQL Server</li>
+                  <li>Azure DevOps</li>
+                  <li>Kubernetes</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="xp-item" name="experiencia">
+              <summary>
+                <h3>QuarkSoft</h3>
+                <span class="xp-role">Full Stack Developer · Cliente: Monte de Piedad</span>
+                <span class="xp-dates">oct 2022 - sep 2024</span>
+                <i class="ph ph-caret-down xp-caret" aria-hidden="true"></i>
+              </summary>
+              <div class="xp-body">
+                <ul class="xp-points">
+                  <li>
+                    Desarrollé APIs REST en Node.js y Express, componentes en React y validaciones
+                    de negocio para Cuenta Digital, con mensajería asíncrona en RabbitMQ.
+                  </li>
+                  <li>
+                    Reestructuré el Certificado de No Exhibición con principios SOLID y reduje 30%
+                    la complejidad del código según SonarQube.
+                  </li>
+                  <li>
+                    Implementé el pago por transferencia bancaria con STP, pruebas de backend y
+                    frontend, y revisiones de código.
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Tecnologías">
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>React</li>
+                  <li>RabbitMQ</li>
+                  <li>MongoDB</li>
+                  <li>Elasticsearch</li>
+                  <li>Jest</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="xp-item" name="experiencia">
+              <summary>
+                <h3>Sye Software</h3>
+                <span class="xp-role">Full Stack Developer · Cliente: SAT</span>
+                <span class="xp-dates">jun 2018 - oct 2022</span>
+                <i class="ph ph-caret-down xp-caret" aria-hidden="true"></i>
+              </summary>
+              <div class="xp-body">
+                <ul class="xp-points">
+                  <li>
+                    Modernicé Arribo de Tránsitos con AngularJS, Java y Spring Boot. La entrada y
+                    salida de vehículos se procesa 30% más rápido.
+                  </li>
+                  <li>
+                    Desarrollé una API REST de operadores aduaneros que redujo 40% el tiempo de
+                    integración frente a conexiones por base de datos y FTP.
+                  </li>
+                  <li>
+                    Implementé el almacenamiento de adjuntos en AWS S3 para Buzón Tributario y di
+                    soporte a producción de punta a punta.
+                  </li>
+                  <li>
+                    Fui Tech Lead durante unos tres meses: coordinación del equipo, asignación de
+                    tareas, revisión de código y decisiones técnicas.
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Tecnologías">
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>AngularJS</li>
+                  <li>AWS S3</li>
+                  <li>Oracle</li>
+                  <li>Jenkins</li>
+                  <li>WebLogic</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="xp-item" name="experiencia">
+              <summary>
+                <h3>Softtek</h3>
+                <span class="xp-role">Full Stack Developer · Cliente: SAT</span>
+                <span class="xp-dates">mar 2017 - may 2018</span>
+                <i class="ph ph-caret-down xp-caret" aria-hidden="true"></i>
+              </summary>
+              <div class="xp-body">
+                <ul class="xp-points">
+                  <li>
+                    Participé en la Fase 2 de Reconocimiento Aduanero con AngularJS y Java/Spring.
+                    Las dos fases de modernización redujeron 70% el tiempo de inspección.
+                  </li>
+                  <li>
+                    Construí el Generador de Folios para documentos aduaneros legales con
+                    PrimeFaces, Java y Spring, compatible con los sistemas legados.
+                  </li>
+                  <li>Di soporte a producción y cuidé la calidad con JUnit, SonarQube y Jenkins.</li>
+                </ul>
+                <ul class="tags" aria-label="Tecnologías">
+                  <li>Java</li>
+                  <li>Spring</li>
+                  <li>AngularJS</li>
+                  <li>PrimeFaces</li>
+                  <li>Oracle</li>
+                  <li>JUnit</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="xp-item" name="experiencia">
+              <summary>
+                <h3>Hewlett Packard Enterprise</h3>
+                <span class="xp-role">Junior Developer · Cliente: SAT</span>
+                <span class="xp-dates">dic 2016 - mar 2017</span>
+                <i class="ph ph-caret-down xp-caret" aria-hidden="true"></i>
+              </summary>
+              <div class="xp-body">
+                <ul class="xp-points">
+                  <li>
+                    Desarrollé las vistas en AngularJS de la Fase 1 de Reconocimiento Aduanero, base
+                    de la modernización en dos fases.
+                  </li>
+                  <li>
+                    Construí consultas y reportes de documentos con PrimeFaces y Java, además de
+                    soporte a producción y pruebas. El equipo del proyecto pasó después a Softtek.
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Tecnologías">
+                  <li>Java</li>
+                  <li>AngularJS</li>
+                  <li>PrimeFaces</li>
+                  <li>MySQL</li>
+                  <li>WebLogic</li>
+                  <li>SVN</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ STACK Y FORMACIÓN ============ -->
+      <section class="section" id="stack">
+        <div class="container stack-grid">
+          <div data-reveal>
+            <h2>Stack técnico</h2>
+            <dl class="skills">
+              <div>
+                <dt>IA</dt>
+                <dd>
+                  Modelos de lenguaje en proveedor cloud, modelos locales de texto e imagen,
+                  embeddings, Spring AI, GitHub Copilot, Claude
+                </dd>
+              </div>
+              <div>
+                <dt>Lenguajes</dt>
+                <dd>Java, JavaScript, TypeScript, Python, SQL</dd>
+              </div>
+              <div>
+                <dt>Backend</dt>
+                <dd>
+                  Spring Boot, Node.js, Express, FastAPI, JPA, Hibernate, REST, WebSocket,
+                  microservicios
+                </dd>
+              </div>
+              <div>
+                <dt>Frontend</dt>
+                <dd>React, Next.js, AngularJS, Three.js, WebGL, HTML, CSS</dd>
+              </div>
+              <div>
+                <dt>Arquitectura y seguridad</dt>
+                <dd>Domain-Driven Design, SOLID, JWT, cifrado RSA/AES, seguridad de APIs</dd>
+              </div>
+              <div>
+                <dt>Datos</dt>
+                <dd>SQL Server, Oracle, PostgreSQL, MySQL, MongoDB, Firestore, Redis, Elasticsearch</dd>
+              </div>
+              <div>
+                <dt>Cloud y DevOps</dt>
+                <dd>AWS S3, Azure Pipelines, Kubernetes, Jenkins, CI/CD, WebLogic, Git</dd>
+              </div>
+              <div>
+                <dt>Calidad</dt>
+                <dd>
+                  JUnit, Jest, Mocha, Chai, React Testing Library, SonarQube, OWASP
+                  Dependency-Check
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <aside class="edu" data-reveal aria-labelledby="formacion-titulo">
+            <h2 id="formacion-titulo">Formación</h2>
+            <ul>
+              <li>
+                <strong>Ingeniería en Sistemas Computacionales</strong>
+                <span>Instituto Tecnológico de Oaxaca, 2016</span>
+              </li>
+              <li>
+                <strong>Claude 101, certificado de finalización</strong>
+                <span>Anthropic, junio de 2026</span>
+              </li>
+              <li>
+                <strong>Idiomas</strong>
+                <span>Español nativo, inglés B2</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section class="section contact" id="contacto">
+        <div class="container contact-grid">
+          <div data-reveal>
+            <h2>¿Qué problema quieres resolver?</h2>
+            <p>
+              Cuéntame el contexto y te respondo con una propuesta concreta. Trabajo de forma
+              remota desde Oaxaca, México.
+            </p>
+          </div>
+
+          <ul class="contact-links" data-reveal>
+            <li>
+              <a
+                href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto."
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+                <span>
+                  <small>WhatsApp</small>
+                  +52 951 272 1779
+                </span>
+                <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:isaacsanlegas@gmail.com">
+                <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+                <span>
+                  <small>Correo</small>
+                  isaacsanlegas@gmail.com
+                </span>
+                <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/isaac-sanlegas" target="_blank" rel="noopener">
+                <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+                <span>
+                  <small>LinkedIn</small>
+                  linkedin.com/in/isaac-sanlegas
+                </span>
+                <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/sanlegas" target="_blank" rel="noopener">
+                <i class="ph ph-github-logo" aria-hidden="true"></i>
+                <span>
+                  <small>GitHub</small>
+                  github.com/sanlegas
+                </span>
+                <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Isaac Santiago</p>
+        <a href="#inicio">Volver arriba</a>
+      </div>
+    </footer>
+
+    <script src="js/i18n.en.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

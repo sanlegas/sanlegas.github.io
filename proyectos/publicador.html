@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publicador con IA | Isaac Santiago</title>
+    <meta
+      name="description"
+      content="Plataforma que recolecta noticias locales, las clasifica y redacta con IA, genera imagen y video, y publica en Facebook, YouTube y TikTok con supervisión humana."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Publicador con IA | Isaac Santiago" />
+    <meta
+      property="og:description"
+      content="Flujo dirigido con IA para leer, procesar y publicar noticias locales en redes sociales."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232046d0'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EIS%3C/text%3E%3C/svg%3E"
+    />
+    <script src="../js/lang-boot.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+        } catch (e) {}
+        root.classList.add("js");
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Isaac Santiago, inicio">
+          <span class="brand-mark" aria-hidden="true">IS</span>
+          <span>Isaac Santiago</span>
+        </a>
+        <nav class="nav" id="menu" aria-label="Principal">
+          <a href="../index.html#soluciones">Qué resuelvo</a>
+          <a href="../index.html#proyectos" aria-current="true">Proyectos</a>
+          <a href="../index.html#ia">IA</a>
+          <a href="../index.html#experiencia">Experiencia</a>
+          <a href="../index.html#contacto">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-btn lang-btn"
+            type="button"
+            data-lang-toggle
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            <i class="ph ph-moon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon-btn menu-btn"
+            type="button"
+            data-menu-toggle
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <i class="ph ph-list" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ============ ENCABEZADO ============ -->
+      <section class="p-hero">
+        <div class="container">
+          <a class="crumb" href="../index.html#proyectos">
+            <i class="ph ph-arrow-left" aria-hidden="true"></i>
+            Proyectos
+          </a>
+
+          <div class="p-hero-grid">
+            <div class="hero-copy">
+              <p class="status">En operación</p>
+              <h1>Publicador con IA</h1>
+              <p class="lead">
+                Lee noticias locales, las analiza con IA y las convierte en publicaciones para
+                Facebook, YouTube y TikTok.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary"
+                  href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20del%20Publicador%20con%20IA."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+                  Quiero probarlo
+                </a>
+                <a class="btn btn-ghost" href="#como-funciona">Cómo funciona</a>
+              </div>
+            </div>
+
+            <!-- TODO: sustituir por una captura real del panel cuando haya una con datos de demostración -->
+            <div class="p-visual">
+              <div class="p-visual-panel">
+                <ol class="flow-steps" aria-label="Flujo del Publicador">
+                  <li>
+                    <span class="flow-icon"><i class="ph ph-rss" aria-hidden="true"></i></span>
+                    <div>
+                      <strong>Recolecta</strong>
+                      <span>Publicaciones por palabras clave de cada perfil.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="flow-icon"><i class="ph ph-funnel" aria-hidden="true"></i></span>
+                    <div>
+                      <strong>Filtra y agrupa</strong>
+                      <span>Sin duplicados, clasificadas y unidas por historia.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="flow-icon"><i class="ph ph-user-check" aria-hidden="true"></i></span>
+                    <div>
+                      <strong>Aprueba</strong>
+                      <span>Una persona decide, o reglas definidas por perfil.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="flow-icon"><i class="ph ph-sparkle" aria-hidden="true"></i></span>
+                    <div>
+                      <strong>Genera</strong>
+                      <span>Texto, imágenes y reels informativos.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="flow-icon"
+                      ><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i
+                    ></span>
+                    <div>
+                      <strong>Publica</strong>
+                      <span>En cada plataforma, con ritmo controlado y evidencia.</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <dl class="p-meta">
+            <div>
+              <dt>Tipo</dt>
+              <dd>Automatización editorial</dd>
+            </div>
+            <div>
+              <dt>Rol</dt>
+              <dd>Diseño, arquitectura y desarrollo</dd>
+            </div>
+            <div>
+              <dt>Alcance</dt>
+              <dd>IA en la nube y local, 3 plataformas</dd>
+            </div>
+            <div>
+              <dt>Acceso</dt>
+              <dd>Privado, demo bajo solicitud</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ PROBLEMA Y SOLUCIÓN ============ -->
+      <section class="section section-tint">
+        <div class="container p-split">
+          <div class="p-problem" data-reveal>
+            <h2>El problema</h2>
+            <p>
+              Operar páginas de noticias locales exige leer cientos de publicaciones al día,
+              decidir cuáles valen, reescribirlas, ilustrarlas y publicarlas en cada red. A mano
+              no escala.
+            </p>
+          </div>
+          <div class="p-solution" data-reveal>
+            <h2>La solución</h2>
+            <p>
+              Un flujo dirigido con IA que recolecta, filtra, agrupa, redacta, genera imagen y
+              video, y publica a su ritmo. La persona solo decide qué se aprueba.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CÓMO FUNCIONA ============ -->
+      <section class="section" id="como-funciona">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Cómo funciona</h2>
+            <p>Cinco etapas encadenadas. Cada una deja registro y puede revisarse desde el panel.</p>
+          </div>
+
+          <ol class="how" style="--cols: 5">
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-rss" aria-hidden="true"></i></span>
+              <h3>Recolecta</h3>
+              <p>
+                Busca publicaciones con las palabras clave de cada perfil y las recibe en lotes,
+                en tiempo real.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-funnel" aria-hidden="true"></i></span>
+              <h3>Filtra y clasifica</h3>
+              <p>
+                Descarta duplicados, aplica listas de bloqueo y estima categoría, relevancia e
+                impacto local de cada nota.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-stack" aria-hidden="true"></i></span>
+              <h3>Agrupa</h3>
+              <p>
+                Embeddings multilingües unen la misma noticia publicada por varias fuentes dentro
+                de una ventana de 72 horas.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"><i class="ph ph-user-check" aria-hidden="true"></i></span>
+              <h3>Aprueba</h3>
+              <p>
+                El editor aprueba desde el panel o deslizando tarjetas. También existen reglas de
+                aprobación automática por perfil.
+              </p>
+            </li>
+            <li data-reveal>
+              <span class="flow-icon"
+                ><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i
+              ></span>
+              <h3>Genera y publica</h3>
+              <p>
+                La IA redacta, crea imagen o reel, y la cola publica con pausas, tope diario y
+                horas de silencio.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ FUNCIONES ============ -->
+      <section class="section section-tint">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Qué hace</h2>
+          </div>
+
+          <div class="features">
+            <article class="feature feature-lead" data-reveal>
+              <span class="flow-icon"><i class="ph ph-arrows-split" aria-hidden="true"></i></span>
+              <div>
+                <h3>IA en cada etapa, con respaldo</h3>
+                <p>
+                  Modelos de proveedor cloud y de equipo local, con respaldo en orden de
+                  prioridad. Si un modelo falla o agota su cuota, el flujo continúa con el
+                  siguiente.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-film-strip" aria-hidden="true"></i></span>
+              <div>
+                <h3>Transformación a multimedia</h3>
+                <p>
+                  Cada nota aprobada se convierte en piezas multimedia, como imágenes y reels
+                  informativos, listas para el formato de cada red.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-target" aria-hidden="true"></i></span>
+              <div>
+                <h3>Clasificador con criterio editorial</h3>
+                <p>
+                  La línea editorial se derivó de unas 1,850 decisiones reales de aprobar o
+                  rechazar. Corre en modo sombra: sugiere, nunca aprueba solo.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-timer" aria-hidden="true"></i></span>
+              <div>
+                <h3>Ritmo de publicación</h3>
+                <p>
+                  Una publicación a la vez por perfil, intervalo mínimo con variación, tope diario
+                  y horas de silencio.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature" data-reveal>
+              <span class="flow-icon"><i class="ph ph-list-checks" aria-hidden="true"></i></span>
+              <div>
+                <h3>Evidencia de cada publicación</h3>
+                <p>
+                  Línea de tiempo por paso con capturas de pantalla, recuperación de trabajos
+                  atorados y modo de prueba que no publica.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature feature-wide" data-reveal>
+              <span class="flow-icon"><i class="ph ph-users-three" aria-hidden="true"></i></span>
+              <div>
+                <h3>Varias marcas, varios editores</h3>
+                <p>
+                  Cada página tiene sus filtros, palabras clave y destinos. Los editores solo ven
+                  los perfiles que les corresponden.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ARQUITECTURA ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2>Arquitectura</h2>
+            <p>
+              Un backend central coordina conectores, modelos y panel por REST y WebSocket.
+            </p>
+          </div>
+
+          <div class="arch" data-reveal>
+            <article class="arch-node">
+              <i class="ph ph-plugs-connected" aria-hidden="true"></i>
+              <h3>Conectores</h3>
+              <p>
+                Recolectan y publican en cada plataforma. Todos hablan un mismo protocolo
+                WebSocket documentado.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-hard-drives" aria-hidden="true"></i>
+              <h3>API y orquestación</h3>
+              <p>
+                Node.js, TypeScript y Express 5. 136 rutas REST, 76 eventos WebSocket y acceso
+                con JWT por rol.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-cpu" aria-hidden="true"></i>
+              <h3>IA y procesamiento</h3>
+              <p>
+                Modelos de proveedor cloud y locales, proceso Python con embeddings y
+                clasificadores, OCR y procesamiento de medios.
+              </p>
+            </article>
+            <article class="arch-node">
+              <i class="ph ph-database" aria-hidden="true"></i>
+              <h3>Datos y panel</h3>
+              <p>
+                MongoDB con 17 modelos y panel en React, Vite y MUI con listas virtualizadas.
+              </p>
+            </article>
+          </div>
+
+          <dl class="tech" data-reveal>
+            <div>
+              <dt>Frontend</dt>
+              <dd>
+                <ul class="tags">
+                  <li>React 18</li>
+                  <li>TypeScript</li>
+                  <li>Vite</li>
+                  <li>MUI</li>
+                  <li>TanStack Virtual</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Backend</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Node.js</li>
+                  <li>Express 5</li>
+                  <li>WebSocket</li>
+                  <li>MongoDB</li>
+                  <li>JWT</li>
+                  <li>OpenAPI</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Modelos de lenguaje e imagen</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Proveedor cloud</li>
+                  <li>Modelos locales</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Aprendizaje automático local</dt>
+              <dd>
+                <ul class="tags">
+                  <li>sentence-transformers</li>
+                  <li>scikit-learn</li>
+                  <li>spaCy</li>
+                  <li>Tesseract</li>
+                  <li>OpenCV</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Medios</dt>
+              <dd>
+                <ul class="tags">
+                  <li>sharp</li>
+                  <li>ffmpeg</li>
+                  <li>Remotion</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Operación</dt>
+              <dd>
+                <ul class="tags">
+                  <li>launchd</li>
+                  <li>Cloudflare Tunnel</li>
+                  <li>Raspberry Pi</li>
+                  <li>Healthchecks</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ DECISIONES ============ -->
+      <section class="section section-tint">
+        <div class="container decisions-grid">
+          <div data-reveal>
+            <h2>Decisiones de ingeniería</h2>
+            <p>Lo que hace que un flujo automático sea confiable en el día a día.</p>
+          </div>
+
+          <ul class="decisions">
+            <li data-reveal>
+              <h3>Publicar dos veces no es opción</h3>
+              <p>
+                Índice único por nota y plataforma, resultados retenidos hasta confirmarse y sin
+                reintento una vez presionado el botón de publicar.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>La IA responde, el código decide</h3>
+              <p>
+                Los modelos contestan preguntas tipadas en JSON y el veredicto se calcula en
+                código con umbrales ajustables. El texto de entrada se trata como dato, nunca
+                como instrucción.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Una plataforma nueva es un adaptador nuevo</h3>
+              <p>
+                Registro de adaptadores por plataforma y un protocolo único para todos los
+                publicadores.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Se vigila y se recupera sola</h3>
+              <p>
+                Revisión de salud cada 60 segundos que reinicia servicios, supervisor que abre o
+                duerme perfiles según la cola y respaldos cifrados.
+              </p>
+            </li>
+            <li data-reveal>
+              <h3>Modelos locales donde conviene</h3>
+              <p>
+                Embeddings, clasificación e imagen corren en equipo propio. La memoria de GPU se
+                libera antes de cada trabajo pesado.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ LLAMADO ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <div>
+              <h2>¿Quieres verlo funcionando?</h2>
+              <p>Es un proyecto privado. Escríbeme y agendamos una demostración.</p>
+            </div>
+            <a
+              class="btn btn-invert"
+              href="https://wa.me/529512721779?text=Hola%20Isaac%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20solicitar%20una%20demo%20del%20Publicador%20con%20IA."
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+              Quiero probarlo
+            </a>
+          </div>
+
+          <nav class="p-next" aria-label="Otros proyectos">
+            <a href="mosaicos.html">TeselARte <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            <a href="menus-ra.html">QR Menú <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            <a href="english4u.html"
+              >English For You <i class="ph ph-arrow-right" aria-hidden="true"></i
+            ></a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Isaac Santiago</p>
+        <a href="../index.html">Volver al inicio</a>
+      </div>
+    </footer>
+
+    <script src="../js/i18n.en.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>
